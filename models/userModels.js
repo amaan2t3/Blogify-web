@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profile:{
+      type: String,
+       default: "../public/default.jpg"
+    }
   },
   { timestamps: true },
 );
