@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const {express , Router }= require('express');
+ const {express , Router }= require('express');
 const User = require('../models/userModels');
 
 
@@ -30,3 +29,5 @@ router.post("/signup" , async (req , res)=>{
     return res.redirect("/");
 
 });
+
+ module.exports = router;

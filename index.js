@@ -6,10 +6,21 @@ const PORT = 8000;
 
 const userRoutes = require("./routes/userRoutes");
 
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/blogifyDB").then((e) => { 
+    console.log("Connected to MongoDB")
+ }).catch((err) => {
+    console.log("Error connecting to MongoDB:", err);
+    });
+
+
 
 // Middleware to parse JSON bodies
 app.set("view engine", "ejs");
 app.set("views",path.resolve("./views")); 
+app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: false}));
 
 // // Import user routes
 

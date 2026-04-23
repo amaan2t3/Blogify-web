@@ -36,7 +36,7 @@ const userSchema = new Schema(
 
 userSchema.pre("save" , function(next){
         const user = this;
-        if(!user.isModified("password")) return
+        if(!user.isModified("password")) return;
 
         const salt = randomBytes(16).toString();
         const hashPassword =  createHmac("sha256", salt)
@@ -45,7 +45,7 @@ userSchema.pre("save" , function(next){
   
         this.salt = salt;
         this.password = hashPassword;
-})
+ })
 
 
 

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <title>SignUp | Blogify</title>
+  </head>
+  <body class="bg-green-100 flex flex-col min-h-screen">
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="min-h-screen flex fle-col items-center justify-center">
+      <div class="py-4 px-4 md:px-8">
+        <div class="grid items-center gap-6 max-w-6xl w-full lg:grid-cols-2">
+          <div
+            class="border border-slate-300 rounded-lg p-6 max-w-md mx-auto shadow-sm md:p-8 lg:mx-0 dark:border-neutral-700"
+          >
+            <div class="mb-8">
+              <h1 class="text-black text-3xl font-bold mb-4">
+                SignUp to Blogify
+              </h1>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Create an account to access your dashboard and manage your
+                projects.
+              </p>
+            </div>
+          
+
+            <form action="/users/signup" method="post" class="space-y-6">
+              <div>
+                <label
+                  for="fullName"
+                  class="mb-2 text-black font-medium text-sm inline-block"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="John Doe"
+                  required
+                  class="px-3 py-2.5 text-sm text-slate-900 rounded-md bg-white w-full outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 bg-green-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="mb-2 text-black font-medium text-sm inline-block"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@readymadeui.com"
+                  required
+                  class="px-3 py-2.5 text-sm text-slate-900 rounded-md bg-white w-full outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 bg-green-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="password"
+                  class="mb-2 text-black font-medium text-sm inline-block"
+                  >Password</label
+                >
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                    class="px-3 py-2.5 text-sm text-slate-900 rounded-md bg-white w-full outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 bg-green-500 pr-10"
+                  />
+                  <button
+                    type="button"
+                    id="togglePassword"
+                    class="absolute right-3 top-2.5 text-slate-600 hover:text-slate-900 focus:outline-none cursor-pointer"
+                  >
+                    <svg
+                      id="eyeIcon"
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-start flex-wrap gap-2">
+                <label
+                  class="flex items-center group has-[input:checked]:text-slate-900"
+                >
+                  <input
+                    id="remember"
+                    name="remember"
+                    type="checkbox"
+                    required
+                    class="sr-only"
+                  />
+                  <!-- Custom box -->
+                  <span
+                    class="flex h-4 w-4 shrink-0 items-center justify-center rounded outline-1 outline-slate-300 dark:outline-neutral-700 bg-white dark:bg-neutral-800 group-has-[input:checked]:bg-blue-600 group-has-[input:checked]:outline-blue-600 group-focus-within:outline-2 group-focus-within:outline-blue-600"
+                    aria-hidden="true"
+                  >
+                    <!-- Checkmark -->
+                    <svg
+                      class="size-3 text-white opacity-0 group-has-[input:checked]:opacity-100"
+                      viewBox="0 0 12 10"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M1 5l3 3 7-7" />
+                    </svg>
+                  </span>
+                  <span class="ml-3 text-sm text-slate-700"> Remember me </span>
+                </label>
+
+                <a
+                  href="#"
+                  class="ml-auto text-sm font-medium text-blue-700 dark:text-blue-500 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                >
+                  Forgot password?
+                </a>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-2 px-3.5 text-sm rounded-md font-semibold cursor-pointer tracking-wide text-white border border-blue-600 bg-green-600 hover:bg-green-700 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
+              >
+                Sign up
+              </button>
+
+              <div class="text-slate-900 text-sm text-center">
+                Don't have an account?
+                <a
+                  href="#"
+                  class="text-blue-700 hover:underline ml-1 font-medium dark:text-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  >Sign up</a
+                >
+              </div>
+            </form>
+          </div>
+
+          <div class="aspect-[71/50] max-lg:w-4/5 mx-auto">
+            <img
+              src="https://readymadeui.com/images/integration-illus.webp"
+              class="w-full object-cover"
+              alt="login img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-auto"><%- include('./partials/footer.ejs') %></div>
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>
