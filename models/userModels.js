@@ -1,6 +1,8 @@
-const { mongoose, model } = require("mongoose");
+const {   model , Schema } = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const {createHmac , randomBytes} = require("crypto");
+
+const userSchema = new Schema(
   {
     fullName: {
       type: String,
@@ -20,11 +22,32 @@ const userSchema = new mongoose.Schema(
     },
     profile:{
       type: String,
-       default: "../public/default.jpg"
+       default: "../public/image/default.jpg"
+    },
+    roll:{
+
+      type: String,
+      enum: ["USER", "ADMIN" ] ,
+      default: "USER",
     }
   },
   { timestamps: true },
 );
+
+userSchema.pre("save" , function(next){
+        const user = this;
+        if(!user.isModified("password")) return
+
+        const salt = randomBytes(16).toString();
+        const hashPassword =  createHmac("sha256", salt)
+        .update(user.password)
+        .digest("hex");
+  
+        this.salt = salt;
+        this.password = hashPassword;
+})
+
+
 
 const User = model("User", userSchema);
 

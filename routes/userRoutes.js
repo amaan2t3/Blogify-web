@@ -1,17 +1,32 @@
 const mongoose = require('mongoose');
-const express = require('express');
+const {express , Router }= require('express');
+const User = require('../models/userModels');
 
 
-const router = express.Router();
+const router = Router();
 
-const User = require('../models/userModel');
-
+ 
 // Get all users
-router.get("/", async (req ,res)=>{
-    try {
-        const users = await User.find();
-        res.json(users);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
+
+router.get("/sigin" , (req , res)=>{
+    return res.render("sigin");
+
+});
+
+    router.get("/signup" , (req , res)=>{
+        return res.render("signup");
+    });
+ 
+
+router.post("/signup" , async (req , res)=>{
+    const {fullName , email , password} = req.body;
+
+    await User.create({
+        fullName,
+        email,
+        password
+    });
+
+    return res.redirect("/");
+
 });
