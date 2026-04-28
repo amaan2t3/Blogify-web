@@ -22,7 +22,7 @@ const userSchema = new Schema(
     },
     profile:{
       type: String,
-       default: "../public/image/default.jpg"
+       default: "/public/image/default.jpg"
     },
     roll:{
 

@@ -19,6 +19,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/blogifyDB").then((e) => {
 app.set("view engine", "ejs");
 app.set("views",path.resolve("./views")); 
 app.use(express.static("public"));
+// app.use(express.static(path.resolve("/public")));
 
 app.use(express.urlencoded({ extended: false}));
 
@@ -27,7 +28,9 @@ app.use(express.urlencoded({ extended: false}));
 app.get("/", (req, res) => {
     res.render("home");
 });
-app.use("/users", userRoutes)
+ 
+
+app.use("/user", userRoutes)
 
 
 
