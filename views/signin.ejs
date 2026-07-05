@@ -4,20 +4,20 @@
     <%- include('./partials/head.ejs') %>
     <title>SignIn | Blogify</title>
   </head>
-  <body class="bg-green-100 flex flex-col min-h-screen">
+  <body class="bg-background flex flex-col min-h-screen">
     <%- include('./partials/nav.ejs') %>
 
     <div class="min-h-screen flex fle-col items-center justify-center">
       <div class="py-4 px-4 md:px-8">
         <div class="grid items-center gap-6 max-w-6xl w-full lg:grid-cols-2">
           <div
-            class="border border-slate-300 rounded-lg p-6 max-w-md mx-auto shadow-sm md:p-8 lg:mx-0 dark:border-neutral-700"
+            class="bg-card border border-customBorder rounded-lg p-6 max-w-md mx-auto shadow-sm md:p-8 lg:mx-0"
           >
             <div class="mb-8">
-              <h1 class="text-black text-3xl font-bold mb-4">
+              <h1 class="text-heading text-3xl font-bold mb-4">
                 SignIn to Blogify
               </h1>
-              <p class="text-slate-600 text-base leading-relaxed">
+              <p class="text-body text-base leading-relaxed">
                 Sign in to access your dashboard and manage your
                 projects.
               </p>
@@ -32,7 +32,7 @@
               <div>
                 <label
                   for="email"
-                  class="mb-2 text-black font-medium text-sm inline-block"
+                  class="mb-2 text-heading font-medium text-sm inline-block"
                   >Email</label
                 >
                 <input
@@ -41,13 +41,13 @@
                   name="email"
                   placeholder="john@readymadeui.com"
                   required
-                  class="px-3 py-2.5 text-sm text-slate-900 rounded-md bg-white w-full outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 bg-green-500"
+                  class="px-3 py-2.5 text-sm text-body rounded-md bg-surface w-full outline-1 -outline-offset-1 outline-customBorder focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                 />
               </div>
               <div>
                 <label
                   for="password"
-                  class="mb-2 text-black font-medium text-sm inline-block"
+                  class="mb-2 text-heading font-medium text-sm inline-block"
                   >Password</label
                 >
                 <div class="relative">
@@ -57,7 +57,7 @@
                     name="password"
                     placeholder="••••••••"
                     required
-                    class="px-3 py-2.5 text-sm text-slate-900 rounded-md bg-white w-full outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 bg-green-500 pr-10"
+                    class="px-3 py-2.5 text-sm text-body rounded-md bg-surface w-full outline-1 -outline-offset-1 outline-customBorder focus:outline-2 focus:-outline-offset-2 focus:outline-primary pr-10"
                   />
                   <button
                     type="button"
@@ -128,16 +128,16 @@
 
               <button
                 type="submit"
-                class="w-full py-2 px-3.5 text-sm rounded-md font-semibold cursor-pointer tracking-wide text-white border border-blue-600 bg-green-600 hover:bg-green-700 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
+                class="w-full py-2 px-3.5 text-sm rounded-md font-semibold cursor-pointer tracking-wide text-white bg-primary hover:bg-primary-hover transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Sign in
               </button>
 
-              <div class="text-slate-900 text-sm text-center">
+              <div class="text-body text-sm text-center">
                 Don't have an account?
                 <a
                   href="/users/signup"
-                  class="text-blue-700 hover:underline ml-1 font-medium dark:text-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  class="text-primary hover:underline ml-1 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                   >sign up</a
                 >
               </div>

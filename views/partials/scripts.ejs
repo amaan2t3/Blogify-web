@@ -1,5 +1,27 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#E11D48',
+            hover: '#BE123C',
+          },
+          secondary: '#FDA4AF',
+          accent: '#F59E0B',
+          background: '#FFF8F8',
+          surface: '#FFFFFF',
+          card: '#FFFFFF',
+          heading: '#3F2A2E',
+          body: '#66565A',
+          muted: '#99878B',
+          customBorder: '#F3D9DE',
+        }
+      }
+    }
+  }
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
